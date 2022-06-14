@@ -8,7 +8,7 @@ public class Lesson14 {
     // объект == экземпляр == instance
 
     public static void main(String[] args) {
-        Lesson14 lesson14 = new Lesson14();
+        /*Lesson14 lesson14 = new Lesson14();
         lesson14.max.introduce();
 
         HomoSapiens katya = new HomoSapiens("Katya", "Ivanova", 20);
@@ -25,10 +25,25 @@ public class Lesson14 {
 
         katya.die();
         System.out.println(HomoSapiens.numberOfHumans);
-        System.out.println(HomoSapiens.averageAge);
+        System.out.println(HomoSapiens.averageAge);*/
+
+        HomoSapiens sam = new HomoSapiens("Sam", "Smith", 32);
+        HomoSapiens dick = new HomoSapiens("Robert", "Siemens", 28);
+
+        sam.die();
+        sam.introduce();
+        dick.die();
+
+        System.out.println("Average age: " + HomoSapiens.averageAge);
+        System.out.println("Number of: " + HomoSapiens.numberOfHumans);
+
+        sam.die();
+        System.out.println("Average age: " + HomoSapiens.averageAge);
+        System.out.println("Number of: " + HomoSapiens.numberOfHumans);
+
     }
 
-    HomoSapiens max = new HomoSapiens("Max", "Kotkov", 40);
+    //HomoSapiens max = new HomoSapiens("Max", "Kotkov", 40);
 
 
 }
@@ -36,10 +51,8 @@ public class Lesson14 {
 class HomoSapiens {
 
     public static int numberOfHumans = 0;
-
     public static double averageAge = 0;
-
-    public static boolean isAlive = false;
+    public boolean isAlive = false;
 
     String firstName;
     private String lastName;
@@ -55,8 +68,14 @@ class HomoSapiens {
 
     // Напишите в классе HomoSapiens метод void die() - должен уменьшать количество людей
     // в переменной numberOfHumans и изменять средний возраст в переменной averageAge.
-    void die() {
-        averageAge = (averageAge * numberOfHumans - age) / (--numberOfHumans);
+    public void die() {
+        if (isAlive) {
+            isAlive = false;
+            if (numberOfHumans == 1) {
+                numberOfHumans = 0;
+                averageAge = 0;
+            } else averageAge = (averageAge * numberOfHumans - age) / (--numberOfHumans);
+        }
     }
 
     public HomoSapiens() {
