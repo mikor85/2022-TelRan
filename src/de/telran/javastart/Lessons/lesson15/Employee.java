@@ -1,29 +1,29 @@
 package de.telran.javastart.Lessons.lesson15;
 
-public class Employee {
+abstract public class Employee {
+
+    // Поля
     int id;
     String name;
     String company;
     int baseSalary;
 
-    public static int idManager = 1;
+    private static int idManager = 1;
+
     // public - видно везде
     // без модификатора - видно в пэкедже
     // protected - видно в дочерних классах и в пэкедже
     // private - видно только в самом классе
 
-
+    // Конструктор
     public Employee(String name, String company, int baseSalary) {
-        this(idManager, name, company, baseSalary);
-    }
-
-    public Employee(int id, String name, String company, int baseSalary) {
-        this.id = id;
+        this.id = idManager++;
         this.name = name;
         this.company = company;
         this.baseSalary = baseSalary;
-        idManager++;
     }
+
+    // Геттеры и сеттеры
 
     // функция будет считать зарплату исходя из бонусов, стоимости часа, коэффициентов и т.д.
     public int getSalary() {
@@ -48,7 +48,6 @@ public class Employee {
 
     public void setId(int id) {
         this.id = id;
-
     }
 
 }

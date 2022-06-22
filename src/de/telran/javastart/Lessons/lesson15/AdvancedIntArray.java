@@ -39,7 +39,7 @@ public class AdvancedIntArray {
         }
         newSource[index] = value;
         for (int i = index + 1; i < newSource.length; i++) {
-            newSource[i] = source[i-1];
+            newSource[i] = source[i - 1];
         }
         source = newSource;
     }
@@ -58,12 +58,18 @@ public class AdvancedIntArray {
 
     // ищет в массиве значение, если есть - true, если нет - false
     public boolean contains(int value) {
-        for (int i = 0; i < source.length; i++) {
-            if (source[i] == value)
-            {
+//        for (int i = 0; i < source.length; i++) {
+//            if (source[i] == value) {
+//                return true;
+//            }
+//        }
+
+        for (int i : source) {  // вариант массива, когда в оператор передается значение элемента
+            if (i == value) {
                 return true;
             }
         }
+
         return false;
     }
 }

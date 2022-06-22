@@ -6,8 +6,8 @@ package de.telran.javastart.Lessons.lesson15;
 public class Manager extends Employee{
     double coeff;
 
-    public Manager(int id, String name, String company, int baseSalary, double coeff) {
-        super(id, name, company, baseSalary);
+    public Manager(/*int id,*/ String name, String company, int baseSalary, double coeff) {
+        super(/*id,*/ name, company, baseSalary);
         this.coeff = coeff;
     }
 

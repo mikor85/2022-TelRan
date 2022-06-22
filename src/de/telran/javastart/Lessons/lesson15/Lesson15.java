@@ -1,4 +1,4 @@
-package de.telran.javastart.Lessons;
+package de.telran.javastart.Lessons.lesson15;
 
         // ДЗ:
         // 1. Дописать AdvancedIntArray.
@@ -69,18 +69,18 @@ public class Lesson15 {
         System.out.println("");
         System.out.println("--------------------");
 
-        Employee misha = new Employee(/*0,*/ "Misha S.", "IBM", 2200);
+        Employee misha = new OfficeEmployee("Misha S.", "IBM", 2200, 300);
         System.out.println("Manager ID: " + misha.getId());
 
-        Employee kesha = new Employee("Innokenty S.", "KINO",2100);
+        Employee kesha = new OfficeEmployee("Innokenty S.", "KINO",2100, 250);
         System.out.println("Manager ID: " + kesha.getId());
 
-        Employee kolia = new Employee("Nikolaj B.", "KINO",2100);
+        Employee kolia = new OfficeEmployee("Nikolaj B.", "KINO",2100, 250);
         System.out.println("Manager ID: " + kolia.getId());
 
-        OfficeEmployee dina = new OfficeEmployee(/*1,*/"Dina D.", "ORACLE", 2500, 100, "");
+        OfficeEmployee dina = new OfficeEmployee("Dina D.", "ORACLE", 2500, 100);
         System.out.println("Manager ID: " + dina.getId());
-        Employee dina2 = new OfficeEmployee(/*1,*/ "Dina D.", "ORACLE", 2500, 100, "");
+        Employee dina2 = new OfficeEmployee(/*1,*/ "Dina D.", "ORACLE", 2500, 100);
 
         System.out.println("Misha's salary: " + misha.getSalary());
         System.out.println("Dina's salary: " + dina.getSalary());
