@@ -10,6 +10,9 @@ package de.telran.javastart.Lessons;
 import de.telran.javastart.Lessons.lesson15.*;
 
 public class Lesson15 {
+
+    public static int[] idManager;
+
     public static void main(String[] args) {
         // наследование классов - способность одного класса
         // использовать и расширять (extends) функциональность другого класса
@@ -75,18 +78,18 @@ public class Lesson15 {
         Employee kolia = new Employee("Nikolaj B.", "KINO",2100);
         System.out.println("Manager ID: " + kolia.getId());
 
-        OfficeEmployee dina = new OfficeEmployee(1,"Dina D.", "ORACLE", 2500, 100, "");
+        OfficeEmployee dina = new OfficeEmployee(/*1,*/"Dina D.", "ORACLE", 2500, 100, "");
         System.out.println("Manager ID: " + dina.getId());
-        Employee dina2 = new OfficeEmployee(1, "Dina D.", "ORACLE", 2500, 100, "");
+        Employee dina2 = new OfficeEmployee(/*1,*/ "Dina D.", "ORACLE", 2500, 100, "");
 
         System.out.println("Misha's salary: " + misha.getSalary());
         System.out.println("Dina's salary: " + dina.getSalary());
         System.out.println("Dina2's salary: " + dina2.getSalary());
 
-        Manager gennady = new Manager(3, "Gennady M.", "DB", 4000, 1.5);
+        Manager gennady = new Manager(/*3,*/ "Gennady M.", "DB", 4000, 1.5);
         System.out.println("Gennady's salary: " + gennady.getSalary());
 
-        HourlyEmployee veronika = new HourlyEmployee(5, "Veronika P.", "DELL", 2500, 200);
+        HourlyEmployee veronika = new HourlyEmployee(/*5,*/ "Veronika P.", "DELL", 2500, 200);
         System.out.println("Veronika's salary: " + veronika.getSalary());
 
         // ПОЛИМОРФИЗМ - это возможность вызвать метод по ссылке на базовый класс
@@ -95,8 +98,7 @@ public class Lesson15 {
         //((OfficeEmployee)dina).introduce();
         // ошибка!!! потому что разные дочерние классы ((OfficeEmployee)gennady).introduce();
 
-        dina.setManager(gennady.getName());
-        System.out.println(dina.getManager());
+        dina.setManager(gennady);
         dina.introduce();
 
     }
