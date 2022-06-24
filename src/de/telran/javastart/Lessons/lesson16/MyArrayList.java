@@ -1,5 +1,7 @@
 package de.telran.javastart.Lessons.lesson16;
 
+import java.util.Arrays;
+
 public class MyArrayList implements AdvancedArrayList {
 
     // Поля
@@ -19,36 +21,70 @@ public class MyArrayList implements AdvancedArrayList {
     // Методы
     @Override
     public void set(int index, int value) {
-
+        source[index] = value;
     }
 
     @Override
     public int get(int index) {
-        return 0;
+        return source[index];
     }
 
     @Override
     public int size() {
-        return 0;
+        return source.length;
     }
 
     @Override
     public void append(int value) {
+        int[] newSource = new int[source.length + 1];
+        for (int i = 0; i < source.length; i++) {
+            newSource[i] = source[i];
+        }
+        newSource[size()] = value;
+        source = newSource;
+    }
+
+    @Override
+    public void append(int[] a) {
 
     }
 
     @Override
     public void insert(int index, int value) {
-
+        int[] newSource = new int[source.length + 1];
+        for (int i = 0; i < index; i++) {
+            newSource[i] = source[i];
+        }
+        newSource[index] = value;
+        for (int i = index + 1; i < newSource.length; i++) {
+            newSource[i] = source[i - 1];
+        }
+        source = newSource;
     }
 
     @Override
     public void delete(int index) {
-
+        int[] newSource = new int[source.length - 1];
+        for (int i = 0; i < index; i++) {
+            newSource[i] = source[i];
+        }
+        for (int i = index + 1; i < source.length; i++) {
+            newSource[i - 1] = source[i];
+        }
+        source = newSource;
     }
 
     @Override
     public boolean contains(int value) {
+        for (int i : source) {
+            if (i == value) {
+                return true;
+            }
+        }
         return false;
+    }
+
+    public void printArray() {
+        System.out.println(Arrays.toString(source));
     }
 }
