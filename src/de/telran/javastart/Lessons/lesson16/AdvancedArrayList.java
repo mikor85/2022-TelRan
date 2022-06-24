@@ -35,7 +35,10 @@ public interface AdvancedArrayList {
 
     static void main(String[] args) {
         MyArrayList myArrayList1 = new MyArrayList(5);
-        myArrayList1.set(1, 11);
+        myArrayList1.set(1, 1);
+        myArrayList1.set(2, 2);
+        myArrayList1.set(3, 3);
+        myArrayList1.set(4, 4);
         myArrayList1.printArray();
         System.out.println("Array size: " + myArrayList1.size());
         System.out.println(myArrayList1.get(1));
@@ -54,6 +57,9 @@ public interface AdvancedArrayList {
         myArrayList2.printArray();
         System.out.println(myArrayList2.contains(33));
         System.out.println("--------------------");
+
+        myArrayList1.append(array2);
+        myArrayList1.printArray();
 
 
     }

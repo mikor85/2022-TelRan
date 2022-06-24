@@ -7,7 +7,6 @@ public class MyArrayList implements AdvancedArrayList {
     // Поля
     private int[] source;
 
-
     // Конструкторы
     public MyArrayList(int initialSize) {
         source = new int[initialSize];
@@ -46,7 +45,14 @@ public class MyArrayList implements AdvancedArrayList {
 
     @Override
     public void append(int[] a) {
-
+        int[] newSource = new int[source.length + a.length];
+        for (int i = 0; i < source.length; i++) {
+            newSource[i] = source[i];
+        }
+        for (int i = 0; i < a.length; i++) {
+            newSource[source.length + i] = a[i];
+        }
+        source = newSource;
     }
 
     @Override
