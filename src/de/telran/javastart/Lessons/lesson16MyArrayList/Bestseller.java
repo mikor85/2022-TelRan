@@ -1,4 +1,4 @@
-package de.telran.javastart.Lessons.lesson16;
+package de.telran.javastart.Lessons.lesson16MyArrayList;
 
 public class Bestseller extends LiteratureBook {
     // он расширяет LiteratureBook

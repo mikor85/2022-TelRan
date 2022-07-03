@@ -32,7 +32,7 @@ public class OfficeEmployee extends Employee {
     }
 
     public void setManager(Manager manager) {
-        this.manager = manager;
+        OfficeEmployee.manager = manager;
     }
 
 

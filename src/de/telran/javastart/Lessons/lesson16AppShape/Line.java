@@ -5,7 +5,7 @@ package de.telran.javastart.Lessons.lesson16AppShape;
 
 public class Line extends Shape {
     // Поля
-    int length;
+    private int length;
 
     // Конструктор
     public Line(char symbol, int length) {
@@ -25,9 +25,9 @@ public class Line extends Shape {
     // Методы
     @Override
     public void draw() {
-        System.out.println("Line consists from " + length + " symbols " + symbol + ":");
+        System.out.println("Line consists from " + length + " symbols " + getSymbol() + ":");
         for (int i = 0; i < length; i++) {
-            System.out.print(symbol);
+            System.out.print(getSymbol());
         }
         System.out.println();
     }

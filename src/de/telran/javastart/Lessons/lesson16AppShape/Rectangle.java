@@ -5,8 +5,8 @@ package de.telran.javastart.Lessons.lesson16AppShape;
 
 public class Rectangle extends Shape {
     // Поля
-    int width;
-    int height;
+    private int width;
+    private int height;
 
     // Конструктор
     public Rectangle(char symbol, int width, int height) {
@@ -40,21 +40,21 @@ public class Rectangle extends Shape {
 
     @Override
     public void draw() {
-        System.out.println("Rectangle has sides " + width + " and " + height + ". Has been drawn from symbols " + symbol + ":");
+        System.out.println("Rectangle has sides " + width + " and " + height + ". Has been drawn from symbols " + getSymbol() + ":");
         for (int i = 0; i < width; i++) {
-            System.out.print(symbol);
+            System.out.print(getSymbol());
         }
         System.out.println();
         for (int i = 0; i < height - 2; i++) {
-            System.out.print(symbol);
+            System.out.print(getSymbol());
             for (int j = 0; j < width - 2; j++) {
                 System.out.print(" ");
             }
-            System.out.print(symbol);
+            System.out.print(getSymbol());
             System.out.println();
         }
         for (int i = 0; i < width; i++) {
-            System.out.print(symbol);
+            System.out.print(getSymbol());
         }
         System.out.println();
     }

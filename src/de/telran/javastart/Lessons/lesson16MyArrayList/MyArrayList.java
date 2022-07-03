@@ -1,4 +1,4 @@
-package de.telran.javastart.Lessons.lesson16;
+package de.telran.javastart.Lessons.lesson16MyArrayList;
 
 import java.util.Arrays;
 
@@ -13,8 +13,10 @@ public class MyArrayList implements AdvancedArrayList {
     }
 
     public MyArrayList(int[] array) {
-        //TODO
-        source = array;
+        source = new int[array.length];
+        for (int i = 0; i < source.length; i++) {
+            source[i] = array[i];
+        }
     }
 
     // Методы

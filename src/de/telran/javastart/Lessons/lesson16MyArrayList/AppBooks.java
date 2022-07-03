@@ -1,4 +1,4 @@
-package de.telran.javastart.Lessons.lesson16;
+package de.telran.javastart.Lessons.lesson16MyArrayList;
 
 public class AppBooks {
     public static void main(String[] args) {

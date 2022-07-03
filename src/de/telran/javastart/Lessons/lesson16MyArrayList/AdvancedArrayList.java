@@ -1,4 +1,4 @@
-package de.telran.javastart.Lessons.lesson16;
+package de.telran.javastart.Lessons.lesson16MyArrayList;
 
 // Интерфейс - это набор методов, которые должны реализовать наследники этого интерфеса.
 // Иными словами - это контракт, которому должны следовать все его дочение классы.
@@ -24,11 +24,13 @@ public interface AdvancedArrayList {
 
     void append(int value);
 
-    void append(int [] a);
+    void append(int[] a);
 
     void insert(int index, int value);
+    //void insert(int index, int [] a);
 
     void delete(int index);
+    //void delete(int index, int howMany);
 
     boolean contains(int value);
 

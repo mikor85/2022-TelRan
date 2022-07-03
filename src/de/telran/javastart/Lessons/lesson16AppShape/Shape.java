@@ -6,10 +6,19 @@ package de.telran.javastart.Lessons.lesson16AppShape;
 abstract public class Shape {
 
     // Поля
-    char symbol;
+    private char symbol;
 
     // Конструктор
     public Shape(char symbol) {
+        this.symbol = symbol;
+    }
+
+    // Геттеры и сеттеры
+    public char getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(char symbol) {
         this.symbol = symbol;
     }
 

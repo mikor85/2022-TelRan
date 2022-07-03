@@ -3,13 +3,13 @@ package de.telran.javastart.Lessons.lesson16AppShape;
 //     Класс Picture который наследует Shape и дополнительным полем которого является массив фигур Shape [] array.
 //     Метод draw должен рисовать все эти фигуры из массива по порядку.
 
-public class Picture extends Shape{
+public class Picture extends Shape {
     // Поля
-    Shape[] array;
+    private Shape[] array;
 
     // Конструктор
-    public Picture(char symbol, Shape[] array) {
-        super(symbol);
+    public Picture(Shape[] array) {
+        super('0');
         this.array = array;
     }
 
@@ -25,8 +25,8 @@ public class Picture extends Shape{
     //Методы
     @Override
     public void draw() {
-        for (Shape shape : array) {
-            shape.draw();
+        for (Shape s : array) {
+            s.draw();
         }
     }
 }
