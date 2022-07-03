@@ -1,4 +1,4 @@
-package de.telran.javastart.Lessons.lesson16MyArrayList;
+package de.telran.javastart.Lessons.lesson16ArrayList;
 
 import java.util.Arrays;
 

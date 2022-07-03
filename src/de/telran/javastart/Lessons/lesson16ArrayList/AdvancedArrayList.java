@@ -1,4 +1,4 @@
-package de.telran.javastart.Lessons.lesson16MyArrayList;
+package de.telran.javastart.Lessons.lesson16ArrayList;
 
 // Интерфейс - это набор методов, которые должны реализовать наследники этого интерфеса.
 // Иными словами - это контракт, которому должны следовать все его дочение классы.
@@ -34,35 +34,4 @@ public interface AdvancedArrayList {
 
     boolean contains(int value);
 
-
-    static void main(String[] args) {
-        MyArrayList myArrayList1 = new MyArrayList(5);
-        myArrayList1.set(1, 1);
-        myArrayList1.set(2, 2);
-        myArrayList1.set(3, 3);
-        myArrayList1.set(4, 4);
-        myArrayList1.printArray();
-        System.out.println("Array size: " + myArrayList1.size());
-        System.out.println(myArrayList1.get(1));
-        myArrayList1.append(33);
-        myArrayList1.printArray();
-        System.out.println(myArrayList1.contains(33));
-        System.out.println("--------------------");
-
-        int[] array2 = new int[]{1, 2, 3};
-        MyArrayList myArrayList2 = new MyArrayList(array2);
-        myArrayList2.set(2, 55);
-        myArrayList2.printArray();
-        System.out.println("Array size: " + myArrayList2.size());
-        System.out.println(myArrayList2.get(2));
-        myArrayList2.append(44);
-        myArrayList2.printArray();
-        System.out.println(myArrayList2.contains(33));
-        System.out.println("--------------------");
-
-        myArrayList1.append(array2);
-        myArrayList1.printArray();
-
-
-    }
 }

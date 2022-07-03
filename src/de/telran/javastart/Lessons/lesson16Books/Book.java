@@ -1,4 +1,4 @@
-package de.telran.javastart.Lessons.lesson16MyArrayList;
+package de.telran.javastart.Lessons.lesson16Books;
 
 // Абстрактный класс - это класс, у которого есть состояние и часть методов;
 // один или несколько методов его объявлены абстрактными и не содержат реализации.

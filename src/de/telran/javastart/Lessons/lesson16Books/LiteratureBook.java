@@ -1,4 +1,4 @@
-package de.telran.javastart.Lessons.lesson16MyArrayList;
+package de.telran.javastart.Lessons.lesson16Books;
 
 public class LiteratureBook extends Book {
     // этот класс наследует Book

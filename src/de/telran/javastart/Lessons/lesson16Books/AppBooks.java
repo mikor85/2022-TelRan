@@ -1,4 +1,6 @@
-package de.telran.javastart.Lessons.lesson16MyArrayList;
+package de.telran.javastart.Lessons.lesson16Books;
+
+import de.telran.javastart.Lessons.lesson16ArrayList.MyArrayList;
 
 public class AppBooks {
     public static void main(String[] args) {
