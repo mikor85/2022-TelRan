@@ -11,14 +11,20 @@ public class Fraction {
         Fraction f1 = new Fraction(1, 3);
         Fraction f2 = new Fraction(2, 3);
 
-        f1.addition(f2).reduction().print();
-        f1.subtraction(f2).reduction().print();
-        f1.multiply(f2).reduction().print();
-        f1.division(f2).reduction().print();
+        f1.addition(f2).print();
+        f1.subtraction(f2).print();
+        f1.multiply(f2).print();
+        f1.division(f2).print();
     }
 
     // Конструктор
     public Fraction(int num, int den) {
+        int n = gcd(num, den);
+        if(n != 1)
+        {
+            num /= n;
+            den /= n;
+        }
         this.num = num;
         this.den = den;
     }
@@ -97,6 +103,23 @@ public class Fraction {
         }
         return a;
     }
+
+    public static int gcd(int f, int s)
+    {
+        // f          s     r
+        // 1071 = 2 × 462 + 147.
+        // f          s
+        // 462 = 3 × 147 + 21.
+        int r = f % s;
+        while (r != 0)
+        {
+            f = s;
+            s = r;
+            r = f % s;
+        }
+        return s;
+    }
+
 
     // Распечатать дробь
     public void print() {
