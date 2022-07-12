@@ -1,11 +1,10 @@
 package de.telran.javastart.Lessons.lesson18.DegreesConverter;
 
-// (0 °C × 9/5) + 32 = 32 °F
-public class FahrenheitConverter implements DegreesConverter {
-    private double temp = 0;
+public class CelsiusConverter implements DegreesConverter{
+    private double temp;
 
     // Constructors
-    public FahrenheitConverter(double temp) {
+    public CelsiusConverter(double temp) {
         this.temp = temp;
     }
 
@@ -18,7 +17,6 @@ public class FahrenheitConverter implements DegreesConverter {
     // Methods
     @Override
     public double convert() {
-        return (temp * 9 / 5) + 32;
+        return temp;
     }
-
 }

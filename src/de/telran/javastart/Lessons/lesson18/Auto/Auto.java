@@ -25,6 +25,18 @@ public class Auto extends Object{
         return color;
     }
 
+    public void setMaker(String maker) {
+        this.maker = maker;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
     // Методы
 
     @Override

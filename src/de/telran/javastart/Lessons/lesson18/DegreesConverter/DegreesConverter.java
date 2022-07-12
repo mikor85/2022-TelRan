@@ -9,4 +9,6 @@ package de.telran.javastart.Lessons.lesson18.DegreesConverter;
 public interface DegreesConverter {
 
     double convert();
+
+    double getTemp();
 }

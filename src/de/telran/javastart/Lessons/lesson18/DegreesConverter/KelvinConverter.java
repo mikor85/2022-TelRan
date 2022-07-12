@@ -10,6 +10,7 @@ public class KelvinConverter implements DegreesConverter {
     }
 
     // Getters and Setters
+    @Override
     public double getTemp() {
         return temp;
     }

@@ -8,14 +8,14 @@ import de.telran.javastart.Lessons.lesson17Fraction.Fraction;
 
 public class MyTime {
     private int h = 0;
-    private int min = 0;
+    private int m = 0;
     private int s = 0;
 
 
     // Constructors
-    public MyTime(int h, int min, int s) {
+    public MyTime(int h, int m, int s) {
         this.h = h;
-        this.min = min;
+        this.m = m;
         this.s = s;
     }
 
@@ -25,7 +25,7 @@ public class MyTime {
     }
 
     public int getMin() {
-        return min;
+        return m;
     }
 
     public int getS() {
@@ -34,35 +34,53 @@ public class MyTime {
 
     // Methods
     @Override
-    public boolean equals(Object time) {
-        if (!(time instanceof MyTime)) {
+    public boolean equals(Object t) {
+        if (!(t instanceof MyTime)) {
             return false;
         }
-        return getH() == ((MyTime) time).getH() &&
-                getMin() == ((MyTime) time).getMin() &&
-                getS() == ((MyTime) time).getS();
+        return getH() == ((MyTime) t).getH() &&
+                getMin() == ((MyTime) t).getMin() &&
+                getS() == ((MyTime) t).getS();
     }
 
     @Override
     public String toString() {
         return h + " h" + " " +
-                min + " min" + " " +
+                m + " min" + " " +
                 s + " sec";
     }
 
     // Time addition
-    public MyTime addition(MyTime time) {
-        int h = getH() + time.getH();
-        int m = getMin() + time.getMin();
-        int s = getS() + time.getS();
+    public MyTime addition(MyTime t) {
+        int secs = s + t.s;
+        int mins = secs / 60;
+        secs = secs % 60;
+        mins += m;
+        mins += t.m;
+        int hours = mins / 60 + h + t.h;
+        mins %= 60;
+        s = secs;
+        m = mins;
+        h = hours;
         return new MyTime(h, m, s);
     }
 
     // Time subtraction
-    public MyTime subtraction(MyTime time) {
-        int h = getH() - time.getH();
-        int m = getMin() - time.getMin();
-        int s = getS() - time.getS();
+    public MyTime subtraction(MyTime t) {
+        int secs = s - t.s; // 40 + 40 = 1m + 20s
+        int mins = m - t.m;
+        if (secs < 0) {
+            secs = 60 + secs;
+            mins--;
+        }
+        int hours = h - t.h;
+        if (mins < 0) {
+            mins = 60 + mins;
+            hours--;
+        }
+        s = secs;
+        m = mins;
+        h = hours;
         return new MyTime(h, m, s);
     }
 }
