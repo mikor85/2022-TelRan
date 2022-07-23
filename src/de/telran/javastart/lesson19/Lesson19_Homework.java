@@ -2,9 +2,6 @@ package de.telran.javastart.lesson19;
 
 //  ДЗ Basic Java:
 
-import javax.sound.midi.Soundbank;
-import java.util.Locale;
-
 public class Lesson19_Homework {
     public static void main(String[] args) {
 
@@ -58,7 +55,6 @@ public class Lesson19_Homework {
 
     //   2. Напишите метод, принимающий на вход строку и подстроку и
     //   возвращающий количество вхождений подстроки в строку. Пример: "Hello world", "l" -> 3.
-
     public static int stringContainsSubstring(String s, String subS) {
         int count = 0;
         for (int i = 0; i <= s.length() - subS.length(); i++) {
